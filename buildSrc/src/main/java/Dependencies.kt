@@ -4,17 +4,45 @@ object Versions {
     const val coreKtx = "1.0.1"
     const val constraintLayout = "1.1.3"
 
+    const val koin = "2.0.0-rc-2"
+
+    const val retrofit = "2.5.0"
+    const val okio = "2.2.2"
+    const val okHttpLoggingInterceptor = "3.14.0"
+    const val retrofitRxJavaAdapter = "2.5.0"
+    const val moshi = "1.8.0"
+    const val retrofitMoshiConverter = "2.4.0"
+
+    const val rxJava = "2.2.8"
+    const val kotlinCoroutines = "1.2.0-alpha-2"
+
     const val junit = "4.12"
     const val androidxJunitExt = "1.1.0"
     const val espressoCore = "3.1.1"
 }
 
 object Dependencies {
+
     const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${ProjectProps.kotlin}"
 
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val ktxCore = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+
+    const val koinCore = "org.koin:koin-core:${Versions.koin}"
+    const val koinAndroid = "org.koin:koin-android:${Versions.koin}"
+    const val koinScopes = "org.koin:koin-androidx-scope:${Versions.koin}"
+    const val koinViewModels = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
+
+    const val rxJava = "io.reactivex.rxjava2:rxjava:${Versions.rxJava}"
+    const val kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinCoroutines}"
+
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val okio = "com.squareup.okio:okio:${Versions.okio}"
+    const val okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpLoggingInterceptor}"
+    const val retrofitRxJavaAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitRxJavaAdapter}"
+    const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
+    const val retrofitMoshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.retrofitMoshiConverter}"
 
     const val junit = "junit:junit:${Versions.junit}"
     const val junitExt = "androidx.test.ext:junit:${Versions.androidxJunitExt}"

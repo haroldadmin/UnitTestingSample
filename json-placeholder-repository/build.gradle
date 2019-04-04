@@ -1,0 +1,20 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Dependencies.kotlinStdlib
+
+    implementation Dependencies.retrofit
+    implementation Dependencies.okHttpLoggingInterceptor
+    implementation Dependencies.retrofitRxJavaAdapter
+    implementation Dependencies.retrofitMoshiConverter
+    implementation Dependencies.rxJava
+    implementation Dependencies.moshi
+    implementation Dependencies.okio
+
+    implementation Dependencies.koinCore
+
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
