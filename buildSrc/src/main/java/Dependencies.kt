@@ -3,6 +3,8 @@ object Versions {
     const val appCompat = "1.0.2"
     const val coreKtx = "1.0.1"
     const val constraintLayout = "1.1.3"
+    const val lifecycleVersion = "2.0.0"
+    const val navVersion = "2.1.0-alpha02"
 
     const val koin = "2.0.0-rc-2"
 
@@ -28,6 +30,10 @@ object Dependencies {
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val ktxCore = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+
+    const val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleVersion}"
+    const val nav = "androidx.navigation:navigation-fragment-ktx:${Versions.navVersion}"
+    const val navUi = "androidx.navigation:navigation-ui-ktx:${Versions.navVersion}"
 
     const val koinCore = "org.koin:koin-core:${Versions.koin}"
     const val koinAndroid = "org.koin:koin-android:${Versions.koin}"

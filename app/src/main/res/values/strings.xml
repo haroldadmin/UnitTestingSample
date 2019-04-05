@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UnitTests</string>
+    <string name="title_users">Module Title</string>
 </resources>

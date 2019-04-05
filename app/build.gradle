@@ -24,15 +24,21 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    dynamicFeatures = [":users"]
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':json-placeholder-repository')
     implementation Dependencies.kotlinStdlib
 
     implementation Dependencies.appCompat
     implementation Dependencies.ktxCore
     implementation Dependencies.constraintLayout
+
+    implementation Dependencies.koinAndroid
+    implementation Dependencies.koinScopes
+    implementation Dependencies.koinViewModels
 
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.junitExt
