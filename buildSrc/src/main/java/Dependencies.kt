@@ -12,6 +12,7 @@ object Versions {
     const val okio = "2.2.2"
     const val okHttpLoggingInterceptor = "3.14.0"
     const val retrofitRxJavaAdapter = "2.5.0"
+    const val retrofitCoroutinesAdapter = "0.9.2"
     const val moshi = "1.8.0"
     const val retrofitMoshiConverter = "2.4.0"
 
@@ -21,11 +22,14 @@ object Versions {
     const val junit = "4.12"
     const val androidxJunitExt = "1.1.0"
     const val espressoCore = "3.1.1"
+
+    const val timber = "4.7.1"
 }
 
 object Dependencies {
 
     const val kotlinStdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${ProjectProps.kotlin}"
+    const val kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinCoroutines}"
 
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val ktxCore = "androidx.core:core-ktx:${Versions.coreKtx}"
@@ -41,18 +45,21 @@ object Dependencies {
     const val koinViewModels = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
 
     const val rxJava = "io.reactivex.rxjava2:rxjava:${Versions.rxJava}"
-    const val kotlinCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinCoroutines}"
+    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlinCoroutines}"
 
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val okio = "com.squareup.okio:okio:${Versions.okio}"
     const val okHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpLoggingInterceptor}"
     const val retrofitRxJavaAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofitRxJavaAdapter}"
+    const val retrofitCoroutinesAdapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutinesAdapter}"
     const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
     const val retrofitMoshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.retrofitMoshiConverter}"
 
     const val junit = "junit:junit:${Versions.junit}"
     const val junitExt = "androidx.test.ext:junit:${Versions.androidxJunitExt}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
+
+    const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 }
 
 object ProjectProps {

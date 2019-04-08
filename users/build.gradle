@@ -1,4 +1,6 @@
 apply plugin: 'com.android.dynamic-feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion ProjectProps.compileSdk
@@ -24,4 +26,15 @@ dependencies {
     implementation Dependencies.lifecycle
     implementation Dependencies.nav
     implementation Dependencies.navUi
+
+    implementation Dependencies.koinAndroid
+    implementation Dependencies.koinViewModels
+    implementation Dependencies.koinScopes
+
+    implementation Dependencies.kotlinCoroutines
+    implementation Dependencies.coroutinesAndroid
+
+    implementation Dependencies.timber
+
+    implementation Dependencies.retrofit
 }

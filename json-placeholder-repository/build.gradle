@@ -7,14 +7,15 @@ dependencies {
 
     implementation Dependencies.retrofit
     implementation Dependencies.okHttpLoggingInterceptor
-    implementation Dependencies.retrofitRxJavaAdapter
     implementation Dependencies.retrofitMoshiConverter
-    implementation Dependencies.rxJava
     implementation Dependencies.moshi
     implementation Dependencies.okio
 
-    implementation Dependencies.koinCore
+    implementation Dependencies.kotlinCoroutines
+    implementation Dependencies.coroutinesAndroid
+    implementation Dependencies.retrofitCoroutinesAdapter
 
+    implementation Dependencies.koinCore
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8

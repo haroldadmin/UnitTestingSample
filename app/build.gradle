@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -24,17 +22,25 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     dynamicFeatures = [":users"]
+
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(path: ':json-placeholder-repository')
+    implementation project(path: ':base')
     implementation Dependencies.kotlinStdlib
 
     implementation Dependencies.appCompat
     implementation Dependencies.ktxCore
     implementation Dependencies.constraintLayout
+
+    implementation Dependencies.nav
+    implementation Dependencies.navUi
 
     implementation Dependencies.koinAndroid
     implementation Dependencies.koinScopes
@@ -43,4 +49,6 @@ dependencies {
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.junitExt
     androidTestImplementation Dependencies.espressoCore
+
+    implementation Dependencies.timber
 }
