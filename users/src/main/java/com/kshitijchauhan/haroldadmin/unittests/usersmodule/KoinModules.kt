@@ -8,8 +8,10 @@ import retrofit2.Retrofit
 val usersModule = module {
 
         single { get<Retrofit>().create(UsersService::class.java) }
-
         single { UsersRepository(get<UsersService>()) }
 
         viewModel { UsersViewModel(get<UsersRepository>()) }
+
+        factory { UsersDiffCallback() }
+        factory { UsersAdapter(get<UsersDiffCallback>()) }
 }

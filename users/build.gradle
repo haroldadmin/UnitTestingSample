@@ -14,6 +14,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -24,6 +27,8 @@ dependencies {
     implementation Dependencies.kotlinStdlib
     implementation Dependencies.appCompat
     implementation Dependencies.lifecycle
+    implementation Dependencies.ktxCore
+    implementation Dependencies.constraintLayout
     implementation Dependencies.nav
     implementation Dependencies.navUi
 
