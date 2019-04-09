@@ -8,14 +8,14 @@ class UsersViewHolder(val binding: ItemUserBinding) : RecyclerView.ViewHolder(bi
     fun bind(userItem: User, calbacks: Callbacks) {
         binding.apply {
             user = userItem
-            root.setOnClickListener { calbacks.onUserClick() }
+            root.setOnClickListener { calbacks.onUserClick(userItem) }
             root.setOnLongClickListener { calbacks.onUserLongClick(userItem) }
             executePendingBindings()
         }
     }
 
     interface Callbacks {
-        fun onUserClick()
+        fun onUserClick(user: User)
         fun onUserLongClick(user: User): Boolean
     }
 }

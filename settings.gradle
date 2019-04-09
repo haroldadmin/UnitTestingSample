@@ -1,2 +1,2 @@
-include ':app', ':json-placeholder-repository', ':users', ':base'
+include ':app', ':json-placeholder-repository', ':users', ':base', ':posts'
 rootProject.name='UnitTests'

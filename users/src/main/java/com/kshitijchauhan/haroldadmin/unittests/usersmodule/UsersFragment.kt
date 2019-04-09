@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
@@ -20,8 +21,8 @@ class UsersFragment : Fragment() {
 
     private val callbacks by lazy {
         object: UsersViewHolder.Callbacks {
-            override fun onUserClick() {
-                Snackbar.make(binding.root, "Posts coming soon!", Snackbar.LENGTH_SHORT).show()
+            override fun onUserClick(user: User) {
+                findNavController().navigate(UsersFragmentDirections.viewPosts(user.id))
             }
 
             override fun onUserLongClick(user: User): Boolean {

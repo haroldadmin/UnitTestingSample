@@ -7,7 +7,27 @@
     <fragment
         android:id="@+id/usersFragment"
         android:name="com.kshitijchauhan.haroldadmin.unittests.usersmodule.UsersFragment"
-        android:label="Users"/>
+        android:label="Users">
+        <action
+            android:id="@+id/viewPosts"
+            app:destination="@id/postsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/usersFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="com.kshitijchauhan.haroldadmin.unittests.posts.PostsFragment"
+        android:label="Posts">'
+
+        <argument
+            android:name="userId"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+    </fragment>
 
 </navigation>

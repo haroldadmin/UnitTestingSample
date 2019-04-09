@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     compileSdkVersion ProjectProps.compileSdk
@@ -23,7 +24,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    dynamicFeatures = [":users"]
+    dynamicFeatures = [":users", ":posts"]
 
     packagingOptions {
         exclude 'META-INF/atomicfu.kotlin_module'
@@ -35,24 +36,38 @@ android {
 }
 
 dependencies {
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(path: ':base')
-    implementation Dependencies.kotlinStdlib
 
-    implementation Dependencies.appCompat
-    implementation Dependencies.ktxCore
-    implementation Dependencies.constraintLayout
+    api project(path: ':json-placeholder-repository')
 
-    implementation Dependencies.nav
-    implementation Dependencies.navUi
+    api Dependencies.kotlinStdlib
+    api Dependencies.appCompat
+    api Dependencies.lifecycle
+    api Dependencies.ktxCore
+    api Dependencies.constraintLayout
+    api Dependencies.nav
+    api Dependencies.navUi
 
-    implementation Dependencies.koinAndroid
-    implementation Dependencies.koinScopes
-    implementation Dependencies.koinViewModels
+    api Dependencies.koinAndroid
+    api Dependencies.koinViewModels
+    api Dependencies.koinScopes
+
+    api Dependencies.kotlinCoroutines
+    api Dependencies.coroutinesAndroid
+
+    api Dependencies.retrofit
+    api Dependencies.okHttpLoggingInterceptor
+    api Dependencies.retrofitMoshiConverter
+    api Dependencies.moshi
+    api Dependencies.okio
+
+    api Dependencies.timber
 
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.junitExt
     androidTestImplementation Dependencies.espressoCore
-
-    implementation Dependencies.timber
 }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">UnitTests</string>
-    <string name="title_users">Module Title</string>
+    <string name="title_users">Users</string>
+    <string name="title_posts">Posts</string>
 </resources>
