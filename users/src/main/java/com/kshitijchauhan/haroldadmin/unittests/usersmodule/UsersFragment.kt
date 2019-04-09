@@ -4,20 +4,34 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
+import com.kshitijchauhan.haroldadmin.json_placeholder_repository.models.User
 import com.kshitijchauhan.haroldadmin.unittests.usersmodule.databinding.FragmentUsersBinding
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import timber.log.Timber
+import org.koin.core.parameter.parametersOf
 
 class UsersFragment : Fragment() {
 
-    private val viewModel by viewModel<UsersViewModel>()
-    private val usersAdapter by inject<UsersAdapter>()
+    private val callbacks by lazy {
+        object: UsersViewHolder.Callbacks {
+            override fun onUserClick() {
+                Snackbar.make(binding.root, "Posts coming soon!", Snackbar.LENGTH_SHORT).show()
+            }
 
+            override fun onUserLongClick(user: User): Boolean {
+                Toast.makeText(requireContext(), "Clicked on ${user.name}", Toast.LENGTH_SHORT).show()
+                return true
+            }
+        }
+    }
+    private val usersAdapter by inject<UsersAdapter> { parametersOf(callbacks) }
+    private val viewModel by viewModel<UsersViewModel>()
     private lateinit var binding: FragmentUsersBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
