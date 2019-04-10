@@ -28,6 +28,27 @@
             android:name="userId"
             app:argType="integer"
             android:defaultValue="-1"/>
+
+        <action
+            android:id="@+id/viewComments"
+            app:destination="@id/commentsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/postsFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/commentsFragment"
+        android:name="com.kshitijchauhan.haroldadmin.unittests.comments.CommentsFragment"
+        android:label="Comments">
+
+        <argument
+            android:name="postId"
+            app:argType="integer"
+            android:defaultValue="-1"/>
     </fragment>
 
 </navigation>

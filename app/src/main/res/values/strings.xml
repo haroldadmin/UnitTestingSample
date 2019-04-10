@@ -2,4 +2,5 @@
     <string name="app_name">UnitTests</string>
     <string name="title_users">Users</string>
     <string name="title_posts">Posts</string>
+    <string name="title_comments">Module Title</string>
 </resources>
