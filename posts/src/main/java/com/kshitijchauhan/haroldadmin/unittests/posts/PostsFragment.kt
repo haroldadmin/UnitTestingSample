@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.kshitijchauhan.haroldadmin.json_placeholder_repository.models.Post
 import com.kshitijchauhan.haroldadmin.unittests.posts.databinding.FragmentPostsBinding
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -18,7 +20,14 @@ class PostsFragment : Fragment() {
 
     private val args by navArgs<PostsFragmentArgs>()
     private val postsViewModel by viewModel<PostsViewModel> { parametersOf(args.userId) }
-    private val postsAdapter by inject<PostsAdapter>()
+    private val callbacks by lazy {
+        object : PostsViewHolder.Callbacks {
+            override fun onPostClick(post: Post) {
+                findNavController().navigate(PostsFragmentDirections.viewComments(post.id))
+            }
+        }
+    }
+    private val postsAdapter by inject<PostsAdapter> { parametersOf(callbacks) }
 
     private lateinit var binding: FragmentPostsBinding
 

@@ -10,7 +10,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 val networkModule = module {
     single {
         HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
+            level = HttpLoggingInterceptor.Level.BASIC
         }
     }
     single {

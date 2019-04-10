@@ -13,5 +13,5 @@ val postsModule = module {
     viewModel { (userId: Int) -> PostsViewModel(get<PostsRepository>(), userId) }
 
     factory { PostsDiffCallback() }
-    factory { PostsAdapter(get<PostsDiffCallback>()) }
+    factory { (callbacks: PostsViewHolder.Callbacks) -> PostsAdapter(get<PostsDiffCallback>(), callbacks) }
 }

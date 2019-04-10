@@ -17,8 +17,8 @@ import org.koin.core.parameter.parametersOf
 
 class CommentsFragment : Fragment() {
 
-    private val commentsViewModel by viewModel<CommentsViewModel>()
     private val args by navArgs<CommentsFragmentArgs>()
+    private val commentsViewModel by viewModel<CommentsViewModel> { parametersOf(args.postId) }
     private val commentsAdapter by inject<CommentsAdapter> { parametersOf(args.postId) }
 
     private lateinit var binding: FragmentsCommentBinding

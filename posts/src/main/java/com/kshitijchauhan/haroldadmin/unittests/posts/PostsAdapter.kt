@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.ListAdapter
 import com.kshitijchauhan.haroldadmin.json_placeholder_repository.models.Post
 import com.kshitijchauhan.haroldadmin.unittests.posts.databinding.ItemPostBinding
 
-class PostsAdapter(diffCallback: PostsDiffCallback): ListAdapter<Post, PostsViewHolder>(diffCallback) {
+class PostsAdapter(diffCallback: PostsDiffCallback,
+                   private val callbacks: PostsViewHolder.Callbacks): ListAdapter<Post, PostsViewHolder>(diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostsViewHolder {
         val binding = ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -14,7 +15,7 @@ class PostsAdapter(diffCallback: PostsDiffCallback): ListAdapter<Post, PostsView
     }
 
     override fun onBindViewHolder(holder: PostsViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), callbacks)
     }
 
 }

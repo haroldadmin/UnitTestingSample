@@ -4,10 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kshitijchauhan.haroldadmin.json_placeholder_repository.models.Comment
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 class CommentsViewModel(private val commentsRepository: CommentsRepository,
@@ -21,6 +18,10 @@ class CommentsViewModel(private val commentsRepository: CommentsRepository,
     val comments: LiveData<List<Comment>>
         get() = _comments
 
+
+    init {
+        launch { getCommentsForPost(postId) }
+    }
 
     suspend fun getCommentsForPost(postId: Int) {
         val comments = withContext(Dispatchers.IO) {
