@@ -3,7 +3,9 @@ apply plugin: 'kotlin'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation Dependencies.kotlinStdlib
+    implementation Dependencies.kotlinReflect
 
     implementation Dependencies.retrofit
     implementation Dependencies.okHttpLoggingInterceptor

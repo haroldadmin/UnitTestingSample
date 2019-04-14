@@ -17,11 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        pickFirst "META-INF/atomicfu.kotlin_module"
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Dependencies.kotlinStdlib
+    implementation Dependencies.kotlinReflect
     implementation Dependencies.kotlinCoroutines
     implementation Dependencies.coroutinesAndroid
 
