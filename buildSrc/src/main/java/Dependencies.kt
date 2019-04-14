@@ -22,6 +22,7 @@ object Versions {
     const val junit5 = "5.4.2"
     const val espressoCore = "3.1.1"
     const val spek = "2.0.2"
+    const val mockitoKotlin = "2.1.0"
 
     const val timber = "4.7.1"
 }
@@ -62,6 +63,7 @@ object Dependencies {
     const val spekDsl = "org.spekframework.spek2:spek-dsl-jvm:${Versions.spek}"
     const val spekRunner = "org.spekframework.spek2:spek-runner-junit5:${Versions.spek}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
+    const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
 
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 }

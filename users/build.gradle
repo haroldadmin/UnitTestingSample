@@ -30,4 +30,5 @@ dependencies {
 
     testImplementation Dependencies.spekDsl
     testImplementation Dependencies.spekRunner
+    testImplementation Dependencies.mockitoKotlin
 }
