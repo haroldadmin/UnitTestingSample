@@ -19,9 +19,9 @@ object Versions {
     const val rxJava = "2.2.8"
     const val kotlinCoroutines = "1.2.0-alpha-2"
 
-    const val junit = "4.12"
-    const val androidxJunitExt = "1.1.0"
+    const val junit5 = "5.4.2"
     const val espressoCore = "3.1.1"
+    const val spek = "2.0.2"
 
     const val timber = "4.7.1"
 }
@@ -56,8 +56,11 @@ object Dependencies {
     const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshi}"
     const val retrofitMoshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.retrofitMoshiConverter}"
 
-    const val junit = "junit:junit:${Versions.junit}"
-    const val junitExt = "androidx.test.ext:junit:${Versions.androidxJunitExt}"
+    const val junitApi = "org.junit.jupiter:junit-jupiter-api:${Versions.junit5}"
+    const val junitJupiterEngine = "org.junit.jupiter:junit-jupiter-engine:${Versions.junit5}"
+    const val junitParameterizedTests = "org.junit.jupiter:junit-jupiter-params:${Versions.junit5}"
+    const val spekDsl = "org.spekframework.spek2:spek-dsl-jvm:${Versions.spek}"
+    const val spekRunner = "org.spekframework.spek2:spek-runner-junit5:${Versions.spek}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCore}"
 
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
