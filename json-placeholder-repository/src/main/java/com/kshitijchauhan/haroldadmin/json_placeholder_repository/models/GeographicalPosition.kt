@@ -5,4 +5,10 @@ import com.squareup.moshi.Json
 data class GeographicalPosition(
     @field:Json(name = "lat") val latitude: String,
     @field:Json(name = "lng") val longitude: String
-)
+) {
+    companion object {
+        fun emptyPosition(): GeographicalPosition {
+            return GeographicalPosition("", "")
+        }
+    }
+}

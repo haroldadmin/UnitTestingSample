@@ -11,4 +11,10 @@ data class User(
     @field:Json(name = "phone") val phone: String,
     @field:Json(name = "website") val website: String,
     @field:Json(name = "company") val company: Company
-)
+) {
+    companion object {
+        fun emptyUser(): User {
+            return User(0, "", "", "", Address.emptyAddress(), "", "", Company.emptyCompany())
+        }
+    }
+}

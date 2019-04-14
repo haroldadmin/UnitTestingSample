@@ -8,4 +8,10 @@ data class Address(
     @field:Json(name = "city") val city: String,
     @field:Json(name = "zipcode") val zipcode: String,
     @field:Json(name = "geo") val geo: GeographicalPosition
-)
+) {
+    companion object {
+        fun emptyAddress(): Address {
+            return Address("", "", "", "", GeographicalPosition.emptyPosition())
+        }
+    }
+}

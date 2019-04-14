@@ -23,4 +23,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':app')
+
+    testImplementation Dependencies.junitApi
+    testRuntimeOnly Dependencies.junitJupiterEngine
+    testImplementation Dependencies.junitParameterizedTests
+
+    testImplementation Dependencies.spekDsl
+    testImplementation Dependencies.spekRunner
 }
