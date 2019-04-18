@@ -1,4 +1,4 @@
-package com.kshitijchauhan.haroldadmin.unittests
+package com.kshitijchauhan.haroldadmin.unittests.usersmodule
 
 import com.kshitijchauhan.haroldadmin.json_placeholder_repository.models.Address
 import com.kshitijchauhan.haroldadmin.json_placeholder_repository.models.Company
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 
-object UsersDiffCallbackTest: Spek({
+internal object UsersDiffCallbackTest: Spek({
     describe("Users DiffCallback test") {
         val callback by memoized { UsersDiffCallback() }
 

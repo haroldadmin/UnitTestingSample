@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kshitijchauhan.haroldadmin.json_placeholder_repository.models.User
 import kotlinx.coroutines.*
-import timber.log.Timber
 import kotlin.coroutines.CoroutineContext
 
 class UsersViewModel(private val usersRepository: UsersRepository) : ViewModel(), CoroutineScope {
@@ -20,14 +19,12 @@ class UsersViewModel(private val usersRepository: UsersRepository) : ViewModel()
 
     init {
         launch {
-            Timber.d("Launching get users on ${Thread.currentThread()}")
             getUsers()
         }
     }
 
     suspend fun getUsers() {
         val users: List<User> = withContext(Dispatchers.IO) {
-            Timber.d("Getting users on ${Thread.currentThread()}")
             usersRepository.getUsersAsync().await()
         }
         _users.value = users

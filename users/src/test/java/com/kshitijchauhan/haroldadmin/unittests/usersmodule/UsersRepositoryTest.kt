@@ -1,4 +1,4 @@
-package com.kshitijchauhan.haroldadmin.unittests
+package com.kshitijchauhan.haroldadmin.unittests.usersmodule
 
 import com.kshitijchauhan.haroldadmin.json_placeholder_repository.models.User
 import com.kshitijchauhan.haroldadmin.unittests.usersmodule.UsersRepository
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 
-object UsersRepositoryTest : Spek({
+internal object UsersRepositoryTest : Spek({
 
     val usersRepository by memoized {
         mock<UsersRepository> {
@@ -18,7 +18,7 @@ object UsersRepositoryTest : Spek({
         }
     }
 
-    describe("Users Repository") {
+    describe("Users Repository Test") {
         it("should return list of one user") {
             val users = runBlocking { usersRepository.getUsersAsync().await() }
             assertEquals(1, users.size)
